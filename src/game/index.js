@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import Axios from 'axios';
 import Board from './board';
 
 function Game({ success, fail }) {
@@ -8,6 +9,7 @@ function Game({ success, fail }) {
     second: {},
     ready: false
   });
+  const { first, second } = state;
 
   // on change board state
   function change(key, value) {
@@ -21,10 +23,45 @@ function Game({ success, fail }) {
     setState(newState);
   }
 
+  // send request
+  function sendRequest() {
+    const timeout = 2000;
+
+    // query
+    function axiosQuery() {
+      return Axios.post('/finch-test', {
+        selectedNumber: {
+          firstField: first.fields,
+          secondField: second.fields
+        },
+        isTicketWon: first.success && second.success
+      });
+    }
+
+    // resend query after 2 sec
+    function resendQuery() {
+      return new Promise((resolve, reject) => {
+        setTimeout(async () => {
+          try {
+            const result = await axiosQuery();
+            resolve(result);
+          } catch (error) {
+            reject(error);
+          }
+        }, timeout);
+      });
+    }
+
+    axiosQuery()
+      .catch(resendQuery)
+      .catch(resendQuery);
+  }
+
   // on click to show result btn
   function onShowResults() {
-    const { first, second } = state;
     const isSuccess = first.success && second.success;
+
+    sendRequest();
 
     if (isSuccess) success();
     else fail();
