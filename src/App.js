@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Game from './game';
+import Result from './game/result';
 
 export default function App() {
+  const [state, setState] = useState({
+    isResultReady: false,
+    isGameWin: null
+  });
+
+  function handleGameChange(value) {
+    setState({
+      isResultReady: true,
+      isGameWin: value
+    });
+  }
+
   return (
     <main className="app-main">
       <section className="block">
@@ -11,7 +24,14 @@ export default function App() {
         </header>
 
         <div className="block__body">
-          <Game />
+          {!state.isResultReady ? (
+            <Game
+              success={() => handleGameChange(true)}
+              fail={() => handleGameChange(false)}
+            />
+          ) : (
+            <Result success={state.isGameWin} />
+          )}
         </div>
       </section>
     </main>

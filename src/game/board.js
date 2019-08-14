@@ -6,14 +6,14 @@ import './index.css';
 
 function Board({ title, subtitle, min, max, count, change }) {
   return (
-    <div className="board">
+    <section className="board">
       <header className="board__header">
         <h2 className="board__title">{title}</h2>
         <p className="board__subtitle">{subtitle}</p>
       </header>
 
       <BoardList min={min} max={max} count={count} change={change} />
-    </div>
+    </section>
   );
 }
 

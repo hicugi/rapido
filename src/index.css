@@ -31,6 +31,19 @@ body {
   background-size: contain;
 }
 
+.btn {
+  padding: 13px 23px;
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+  border-radius: 40px;
+  font-size: 14px;
+  line-height: 16px;
+}
+.btn:disabled {
+  opacity: 0.16;
+}
+
 .block {
   padding: 14px 11px;
   background-color: #fff;
