@@ -35,7 +35,9 @@ export default function App() {
       <section className="block">
         <header className="block__header">
           <h1 className="block__title">Билет 1</h1>
-          <button className="icon-magic" onClick={handleReload}></button>
+          {!state.isResultReady && (
+            <button className="icon-magic" onClick={handleReload}></button>
+          )}
         </header>
 
         <div className="block__body">
