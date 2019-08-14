@@ -8,9 +8,11 @@ function rand(max) {
 }
 
 class BoardList extends React.Component {
+  // set initial state
   constructor({ max, count }) {
     super();
 
+    // generate random wining list
     const winingList = [...Array(max)].reduce(res => {
       let val = 0;
 
@@ -23,31 +25,36 @@ class BoardList extends React.Component {
       return res;
     }, []);
 
+    // set initial state
     this.state = {
       winingList,
       activeList: []
     };
   }
 
-  handleSelect(index) {
+  handleSelect(value) {
     const { min: propMin, max, change } = this.props;
     const min = propMin || max;
 
     const { winingList, activeList } = this.state;
 
-    const indexFromList = activeList.indexOf(index);
+    // find index of value
+    const index = activeList.indexOf(value);
 
-    if (indexFromList > -1) activeList.splice(indexFromList, 1);
+    // remove || insert value to active list
+    if (index > -1) activeList.splice(index, 1);
     else if (activeList.length < max) {
-      activeList.push(index);
+      activeList.push(value);
     }
 
+    // callback by props
     change({
       fields: [...activeList],
       ready: activeList.length === max,
       success: activeList.filter(v => winingList.includes(v)).length >= min
     });
 
+    // update active list of state
     this.setState({
       activeList
     });
