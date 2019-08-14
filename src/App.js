@@ -1,6 +1,7 @@
 import React from 'react';
+import Game from './game';
 
-function App() {
+export default function App() {
   return (
     <main className="app-main">
       <section className="block">
@@ -9,10 +10,10 @@ function App() {
           <button className="icon-magic"></button>
         </header>
 
-        <div className="block__body">{/*  */}</div>
+        <div className="block__body">
+          <Game />
+        </div>
       </section>
     </main>
   );
 }
-
-export default App;

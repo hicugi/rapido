@@ -17,7 +17,7 @@ body {
 
 .app-main {
   margin: 0 auto;
-  max-width: 296px;
+  max-width: 302px;
   padding-top: 17px;
 }
 
@@ -37,8 +37,10 @@ body {
   border-radius: 3px;
 }
 .block__header {
+  margin-bottom: 10px;
   display: flex;
   justify-content: space-between;
+  padding: 0 5px;
 }
 .block__title {
   margin: 0;

@@ -1,0 +1,40 @@
+.board {
+  margin-bottom: 12px;
+}
+
+.board__header {
+  margin-bottom: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 5px;
+}
+
+.board__title,
+.board__subtitle {
+  margin: 0;
+  font-size: 12px;
+  line-height: 20px;
+}
+
+.board__title {
+  font-weight: normal;
+  margin-right: 8px;
+}
+.board__subtitle {
+  font-weight: 300;
+}
+
+.board-list {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  list-style: none;
+}
+.board-list__item {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background: #fff;
+}
