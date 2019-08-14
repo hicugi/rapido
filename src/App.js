@@ -4,9 +4,24 @@ import Result from './game/result';
 
 export default function App() {
   const [state, setState] = useState({
+    isLoading: false,
     isResultReady: false,
     isGameWin: null
   });
+
+  function handleReload() {
+    setState({
+      ...state,
+      isLoading: true
+    });
+
+    setTimeout(() => {
+      setState({
+        ...state,
+        isLoading: false
+      });
+    }, 1000);
+  }
 
   function handleGameChange(value) {
     setState({
@@ -20,17 +35,24 @@ export default function App() {
       <section className="block">
         <header className="block__header">
           <h1 className="block__title">Билет 1</h1>
-          <button className="icon-magic"></button>
+          <button className="icon-magic" onClick={handleReload}></button>
         </header>
 
         <div className="block__body">
-          {!state.isResultReady ? (
-            <Game
-              success={() => handleGameChange(true)}
-              fail={() => handleGameChange(false)}
-            />
+          {/* loading */}
+          {state.isLoading ? (
+            <div className="loading">&nbsp;</div>
           ) : (
-            <Result success={state.isGameWin} />
+            <div>
+              {!state.isResultReady ? (
+                <Game
+                  success={() => handleGameChange(true)}
+                  fail={() => handleGameChange(false)}
+                />
+              ) : (
+                <Result success={state.isGameWin} />
+              )}
+            </div>
           )}
         </div>
       </section>

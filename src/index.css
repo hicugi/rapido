@@ -62,3 +62,29 @@ body {
   font-style: normal;
   font-weight: normal;
 }
+
+.loading {
+  z-index: 0;
+  position: relative;
+  height: 300px;
+}
+.loading::before {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 68px;
+  height: 68px;
+  border: 2px solid;
+  border-color: #ffd205 transparent transparent transparent;
+  border-radius: 100%;
+  animation: linear 1s loading infinite;
+  content: '';
+}
+@keyframes loading {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(380deg);
+  }
+}
