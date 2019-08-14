@@ -21,8 +21,29 @@ body {
   padding-top: 17px;
 }
 
+.icon-magic {
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  border: 0;
+  background: url(/ico/magic-wand.svg) no-repeat center;
+  background-size: contain;
+}
+
 .block {
   padding: 14px 11px;
   background-color: #fff;
   border-radius: 3px;
+}
+.block__header {
+  display: flex;
+  justify-content: space-between;
+}
+.block__title {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  font-style: normal;
+  font-weight: normal;
 }
