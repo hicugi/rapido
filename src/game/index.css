@@ -23,18 +23,3 @@
 .board__subtitle {
   font-weight: 300;
 }
-
-.board-list {
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0;
-  list-style: none;
-}
-.board-list__item {
-  width: 40px;
-  height: 40px;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-  background: #fff;
-}

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import BoardList from './board-list';
+
 import './index.css';
 
-function Board({ title, subtitle, count }) {
+function Board({ title, subtitle, min, max, count, change }) {
   return (
     <div className="board">
       <header className="board__header">
@@ -10,13 +12,7 @@ function Board({ title, subtitle, count }) {
         <p className="board__subtitle">{subtitle}</p>
       </header>
 
-      <ul className="board-list">
-        {[...Array(count)].map((_, index) => (
-          <li key={index}>
-            <button className="board-list__item">{index + 1}</button>
-          </li>
-        ))}
-      </ul>
+      <BoardList min={min} max={max} count={count} change={change} />
     </div>
   );
 }
@@ -24,7 +20,10 @@ function Board({ title, subtitle, count }) {
 Board.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
-  count: PropTypes.number
+  min: PropTypes.number,
+  max: PropTypes.number,
+  count: PropTypes.number,
+  change: PropTypes.func
 };
 
 export default Board;
