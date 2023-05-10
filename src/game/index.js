@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import Axios from 'axios';
 import Board from './board';
 
 function Game({ success, fail }) {
@@ -29,12 +28,17 @@ function Game({ success, fail }) {
 
     // query
     function axiosQuery() {
-      return Axios.post('/finch-test', {
+      const data = {
         selectedNumber: {
           firstField: first.fields,
           secondField: second.fields
         },
         isTicketWon: first.success && second.success
+      };
+
+      return fetch('/finch-test', {
+        method: 'POST',
+        body: JSON.stringify(data)
       });
     }
 
