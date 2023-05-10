@@ -85,11 +85,11 @@ function Game({ success, fail }) {
         change={value => change('second', value)}
       />
 
-      <div className="game__footer" align="center">
+      <center className="game__footer">
         <button className="btn" disabled={!state.ready} onClick={onShowResults}>
           Показать результат
         </button>
-      </div>
+      </center>
     </div>
   );
 }
