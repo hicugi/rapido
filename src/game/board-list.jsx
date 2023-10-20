@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import './board-list.css';
 
@@ -85,12 +84,5 @@ class BoardList extends React.Component {
     );
   }
 }
-
-BoardList.propTypes = {
-  min: PropTypes.number,
-  max: PropTypes.number,
-  count: PropTypes.number,
-  change: PropTypes.func
-};
 
 export default BoardList;

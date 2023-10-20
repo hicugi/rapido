@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BoardList from './board-list';
 
 import './index.css';
@@ -16,14 +15,5 @@ function Board({ title, subtitle, min, max, count, change }) {
     </section>
   );
 }
-
-Board.propTypes = {
-  title: PropTypes.string,
-  subtitle: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number,
-  count: PropTypes.number,
-  change: PropTypes.func
-};
 
 export default Board;

@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 function Result({ success }) {
   return (
@@ -10,9 +9,5 @@ function Result({ success }) {
     </div>
   );
 }
-
-Result.propTypes = {
-  success: PropTypes.bool
-};
 
 export default Result;
