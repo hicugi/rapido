@@ -1,12 +1,9 @@
 {
   "name": "rapido",
   "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "prop-types": "^15.8.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1"
+  "engines": {
+    "node": ">=18.18.2",
+    "npm": ">=9.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -14,6 +11,22 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "verify": "lint-staged"
+  },
+  "dependencies": {
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1"
+  },
+  "devDependencies": {
+    "@babel/eslint-parser": "^7.21.8",
+    "eslint": "^8.4.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -29,16 +42,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/eslint-parser": "^7.21.8",
-    "eslint": "^8.4.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-react": "^7.32.2",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.2.2",
-    "prettier": "^2.8.8"
   },
   "standard": {
     "parser": "babel-eslint"
