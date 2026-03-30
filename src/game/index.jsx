@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import Board from './board';
 
 function Game({ success, fail }) {
@@ -97,10 +96,5 @@ function Game({ success, fail }) {
     </div>
   );
 }
-
-Game.propTypes = {
-  success: PropTypes.func,
-  fail: PropTypes.func
-};
 
 export default Game;
